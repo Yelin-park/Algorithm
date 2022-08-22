@@ -9,7 +9,6 @@ public class 단어변환 {
         String begin = "hit";
         String target = "cog";
         String[] words = {"hot", "dot", "dog", "lot", "log", "cog"};
-
     }
 }
 
@@ -69,3 +68,4 @@ class Solution17 {
         return answer;
     }
 }
+

@@ -1,5 +1,7 @@
 package programmers;
 
+import java.util.Stack;
+
 public class 네트워크 {
 
     public static void main(String[] args) {
@@ -22,29 +24,28 @@ class Sol17 {
     public int solution(int n, int[][] computers) {
         int answer = 0;
 
-        boolean[] visited = new boolean[n];
+        boolean[] visited = new boolean[n]; // 방문 처리를 할 불린 배열 생성
+
+        Stack<Integer> s = new Stack<>();
 
         for (int i = 0; i < n; i++) {
-            if (!visited[i]) {
-                dfs(computers, i, visited);
-                answer++;
+            if (visited[i]) continue;
+            s.push(i);
+            answer++;
+
+            while (!s.isEmpty()) {
+                int x = s.pop();
+                visited[x] = true;
+                for (int j = 0; j < n; j++) {
+                    if (computers[x][j] == 1 && !visited[j]) { // j가 x가 되면 통과를 못함
+                        s.push(j);
+                    }
+                }
             }
+
         }
 
         return answer;
     }
-
-    boolean[] dfs(int[][] computers, int i, boolean[] visited) {
-        visited[i] = true;
-
-        for (int j = 0; j < computers.length; j++) {
-            if (i != j && computers[i][j] == 1 && visited[j] == false) {
-                visited = dfs(computers, j, visited);
-            }
-        }
-
-        return visited;
-    }
-
 }
 
