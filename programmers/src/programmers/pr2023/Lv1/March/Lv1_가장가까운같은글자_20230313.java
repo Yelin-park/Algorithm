@@ -41,6 +41,15 @@ public class Lv1_가장가까운같은글자_20230313 {
             }
 
             return answer;
+            /*
+            // Map으로 푼 풀이(정석)
+            HashMap<Character,Integer> map = new HashMap<>();
+            for(int i=0; i<s.length();i++){
+                char ch = s.charAt(i);
+                answer[i] = i-map.getOrDefault(ch,i+1); // map에 ch 키의 값이 있으면 가져오고 없으면 i+1해서 가져옴
+                map.put(ch,i); // map에 키와 값을 할당
+            }
+             */
         }
     }
 }
