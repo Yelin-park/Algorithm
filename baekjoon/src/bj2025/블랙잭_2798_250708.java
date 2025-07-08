@@ -1,0 +1,33 @@
+package bj2025;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.stream.Collectors;
+
+public class 블랙잭_2798_250708 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        String[] s = br.readLine().split(" ");
+        List<Integer> list = Arrays.stream(s).map(Integer::parseInt).collect(Collectors.toList());
+        int max = 0;
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                for (int k = j + 1; k < list.size(); k++) {
+                    int sum = list.get(i) + list.get(j) + list.get(k);
+                    if (sum <= M) {
+                        max = Math.max(max, sum);
+                    }
+                }
+            }
+        }
+
+        System.out.println(max);
+    }
+}
