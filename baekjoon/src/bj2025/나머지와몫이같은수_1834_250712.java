@@ -25,8 +25,8 @@ public class 나머지와몫이같은수_1834_250712 {
         int N = Integer.parseInt(br.readLine());
 
         long sum = 0;
-        for (int i = 1; i < N; i++) {
-            sum += ((long) N * i + i);
+        for (long i = 1; i < N; i++) {
+            sum += (N * i + i);
         }
 
         System.out.println(sum);
