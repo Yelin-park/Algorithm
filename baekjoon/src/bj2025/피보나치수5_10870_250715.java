@@ -9,6 +9,7 @@ public class 피보나치수5_10870_250715 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
 
+        // 동적 계획법
         int[] dp = new int[n + 1];
         dp[0] = 0;
         if (n > 0) dp[1] = 1;
@@ -18,5 +19,12 @@ public class 피보나치수5_10870_250715 {
         }
 
         System.out.println(dp[n]);
+    }
+
+    // 재귀 함수
+    public static int fibonacci(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }
