@@ -23,7 +23,7 @@ public class 부녀회장이될테야_2775_250718 {
 
             int[][] arr = new int[k][15];
             int result = 0;
-            for (int j = 0; j < k; j++) { // k-1층까지돌기
+            for (int j = 0; j < k; j++) { // k층까지돌기
                 for (int l = 1; l <= n; l++) { // 해당하는 호수 다 돌기
                     int sum = 0;
                     for (int m = 1; m <= l; m++) {
