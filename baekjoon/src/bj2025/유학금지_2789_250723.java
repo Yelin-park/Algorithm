@@ -11,7 +11,7 @@ public class 유학금지_2789_250723 {
         String[] arr = {"C", "A", "M", "B", "R", "I", "D", "G", "E"};
 
         for (String s : arr) {
-            str = str.replaceAll(s, "");
+            str = str.replace(s, "");
         }
 
         System.out.println(str);
