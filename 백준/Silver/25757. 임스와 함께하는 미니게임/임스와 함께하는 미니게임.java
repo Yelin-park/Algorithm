@@ -9,11 +9,12 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         String game = st.nextToken();
+        
         HashSet<String> player = new HashSet<>();
         for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            player.add(st.nextToken());
+            player.add(br.readLine());
         }
+        
         if (game.equals("Y")) {
             System.out.println(player.size() / 1);
         } else if (game.equals("F")) {
