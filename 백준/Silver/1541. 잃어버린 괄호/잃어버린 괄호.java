@@ -1,26 +1,22 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String s = br.readLine();
-        String[] split = s.split("-");
-        int result = sum(split[0]);
-
-        for (int i = 1; i < split.length; i++) {
-            result -= sum(split[i]);
+        String[] splits = s.split("-");
+        int result = sum(splits[0]);
+        for (int i = 1; i < splits.length; i++) {
+            result -= sum(splits[i]);
         }
-
         System.out.println(result);
     }
-
-    private static int sum(String block) {
-        String[] nums = block.split("\\+");
+    
+    private static int sum(String str) {
+        String[] nums = str.split("\\+");
         int sum = 0;
-        for (String num : nums) {
-            sum += Integer.parseInt(num);
+        for(String s : nums) {
+            sum += Integer.parseInt(s);
         }
         return sum;
     }
