@@ -6,17 +6,17 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
-        List<Integer> list = new ArrayList<>();
+        int[] arr = new int[N];
         for (int i = 0; i < N; i++) {
-            list.add(Integer.parseInt(st.nextToken()));
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        list.sort(Integer::compareTo);
+        Arrays.sort(arr);
 
         int sum = 0;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j <= i; j++) {
-                sum += list.get(j);
+                sum += arr[j];
             }
         }
 
