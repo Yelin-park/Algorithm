@@ -14,10 +14,10 @@ public class Main {
         Arrays.sort(arr);
 
         int sum = 0;
+        int pre = 0;
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j <= i; j++) {
-                sum += arr[j];
-            }
+            pre += arr[i];
+            sum += pre;
         }
 
         System.out.println(sum);
